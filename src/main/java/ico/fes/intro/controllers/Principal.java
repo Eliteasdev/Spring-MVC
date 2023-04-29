@@ -1,5 +1,6 @@
 package ico.fes.intro.controllers;
 
+import ico.fes.intro.helpers.Peticion;
 import ico.fes.intro.model.Empleado;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
