@@ -4,7 +4,7 @@ En este proyecto se usa la teoría del modelo vista - controlador, con la ayuda 
 
 __Interfaz de la aplicación:__
 
-![](https://github.com/Eliteasdev/Spring-MVC/blob/main/public/Desktop.png?raw=true)
+![](https://github.com/Eliteasdev/Spring-MVC/blob/main/github/Desktop.png?raw=true)
 
 ## 📓Comenzando
 
