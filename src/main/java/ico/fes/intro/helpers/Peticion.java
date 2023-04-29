@@ -15,22 +15,15 @@ public class Peticion {
     private final HttpClient httpClient = HttpClient.newBuilder().version(HttpClient.Version.HTTP_2).build();
     // Objecto para formatear la consulta [String -> Object]
     final ObjectMapper mapper = new ObjectMapper();
+    public static List<Personaje> personajes;
 
 
     public Peticion(){
-        final HttpRequest peticionAPI = HttpRequest.newBuilder().GET().uri(URI.create("https://rickandmortyapi.com/api/character/1,2")).build();
+        final HttpRequest peticionAPI = HttpRequest.newBuilder().GET().uri(URI.create("https://rickandmortyapi.com/api/character/1,2,3,4,5,6,7,8,9,10")).build();
 
         try{
             final HttpResponse<String> respuesta = httpClient.send(peticionAPI, HttpResponse.BodyHandlers.ofString());
-            List<Personaje> personajes = converetirObjecto(respuesta.body(), new TypeReference<List<Personaje>>(){});
-            personajes.stream().forEach(pj ->{
-                System.out.println(pj.getId());
-                System.out.println(pj.getName());
-                System.out.println(pj.getStatus());
-                System.out.println(pj.getSpecies());
-                System.out.println(pj.getGender());
-
-            });
+            personajes = converetirObjecto(respuesta.body(), new TypeReference<List<Personaje>>(){});
         }catch (Exception e){
             e.printStackTrace();
         }

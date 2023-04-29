@@ -1,20 +1,24 @@
 package ico.fes.intro.controllers;
 
 import ico.fes.intro.helpers.Peticion;
-import ico.fes.intro.model.Empleado;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-
-import java.sql.Date;
+import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
 public class Principal {
 
-    @GetMapping("/inicio")
+    @GetMapping(path = {"/", "/{data}"})
     public String getInicio(Model model){
-        Empleado empleado = new Empleado(1,  23000,"José Sosa", "Desarrollo", "12/12/2000");
-        model.addAttribute("empleado", empleado);
+        try{
+            Peticion rq = new Peticion();
+        }catch (Exception e){
+            e.printStackTrace();
+            return "404";
+        }
+        model.addAttribute("personajes", Peticion.personajes);
         return "index";
     }
+
 }

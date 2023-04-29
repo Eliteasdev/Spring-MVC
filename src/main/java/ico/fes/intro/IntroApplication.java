@@ -8,7 +8,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class IntroApplication {
 
 	public static void main(String[] args) {
-		Peticion rq = new Peticion();
+
 		SpringApplication.run(IntroApplication.class, args);
 	}
 

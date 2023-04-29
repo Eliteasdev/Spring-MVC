@@ -13,4 +13,5 @@ public class Personaje implements Serializable {
     private String status;
     private String species;
     private String gender;
+    private String image;
 }
